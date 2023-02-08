@@ -6,6 +6,7 @@ services:
         volumes:
             - ./images/nginx:/etc/nginx/conf.d
             - ../site-backend:/var/www/app
+            - ../site-admin:/var/www/app-admin
             - ./logs/nginx:/var/log/nginx
         depends_on:
             - app-php-zapolnite
@@ -23,6 +24,7 @@ services:
             APP_DEBUG: 1
         volumes:
             - ../site-backend:/var/www/app
+            - ../site-admin:/var/www/app-admin
             - ./images/php/custom_php.ini:/usr/local/etc/php/conf.d/custom_php.ini
         depends_on:
             - app-postgres-zapolnite
