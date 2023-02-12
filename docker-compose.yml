@@ -73,6 +73,23 @@ services:
         networks:
             - zapolnite
 
+    app-tg-service:
+        build:
+            context: .
+            dockerfile: ./services/tg/Dockerfile
+        container_name: app-tg-service
+#        restart: always
+        depends_on:
+            - app-php-zapolnite
+        volumes:
+            - ./logs/tg-service:/opt/app/logs
+        ports:
+            - "5243:5243"
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        networks:
+            - zapolnite
+
 networks:
     zapolnite:
         driver: bridge

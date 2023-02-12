@@ -1,0 +1,12 @@
+{
+  "port": 5243,
+  "host": "app-tg-service",
+  "channels": [
+    {
+      "name": "zplnt_test_bot",
+      "url-code": "zplnt_test_bot",
+      "url-api": "http://app-nginx-zapolnite:82/api/v1/tg-service",
+      "token": "6049184947:AAFSjjuHhNLS7-z_m60Kv-plq4yuVFAfFSc"
+    }
+  ]
+}

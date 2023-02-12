@@ -17,8 +17,10 @@ recreate-nginx:
 	docker-compose up -d --force-recreate --no-deps --build app-supervisor-zapolnite
 recreate-sv:
 	docker-compose up -d --force-recreate --no-deps --build app-nginx-zapolnite
+recreate-tg-service:
+	docker-compose up -d --force-recreate --no-deps --build app-tg-service
 gophp:
-	docker-compose exec app-php-zapolnite bash -c "cd app"
+	docker-compose exec app-php-zapolnite bash
 gosv:
 	docker-compose exec app-supervisor-zapolnite bash
 docker-down-clear:
